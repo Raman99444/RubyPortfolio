@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Guids</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guids.each do |guid| %>
+      <tr>
+        <td><%= guid.title %></td>
+        <td><%= link_to 'Show', guid %></td>
+        <td><%= link_to 'Edit', edit_guid_path(guid) %></td>
+        <td><%= link_to 'Destroy', guid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guid', new_guid_path %>
